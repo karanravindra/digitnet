@@ -1,16 +1,3 @@
----
-license: mit
-pipeline_tag: image-classification
-datasets:
-  - ylecun/mnist
-  - karanravindra/qmnist
-language:
-  - en
-tags:
-  - legal
-  - finance
----
-
 # digitnet
 
 The digitnet family of models are a series of models trained on the QMNIST datasets. The models are trained to classify images of handwritten digits into one of ten classes, corresponding to the digits 0-9. The models are trained using the PyTorch framework.
