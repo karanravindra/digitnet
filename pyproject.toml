@@ -1,0 +1,17 @@
+[project]
+name = "digitnet"
+version = "0.1.0"
+description = "A simple neural network for recognizing digits."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.9.2",
+    "onnx>=1.16.2",
+    "safetensors>=0.4.5",
+    "scikit-learn>=1.5.2",
+    "torch>=2.4.1",
+    "torchinfo>=1.8.0",
+    "torchvision>=0.19.1",
+    "tqdm>=4.66.5",
+    "transformers>=4.45.1",
+]
