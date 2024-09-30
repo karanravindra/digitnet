@@ -166,7 +166,6 @@ def main(width, name):
 
     ## Save the model and the optimizer state
     # save checkpoint
-    
     torch.save(
         {"model": model.state_dict(), "optimizer": optimizer.state_dict()},
         f"checkpoints/{name}/model.ckpt",
@@ -183,11 +182,11 @@ def main(width, name):
 
 
 if __name__ == "__main__":
-    print("Running sm")
+    print("Training new model: sm")
     main(2, "sm")  # sm
-    print("Running md")
+    print("\nTraining new model: md")
     main(4, "md")  # md
-    print("Running lg")
+    print("\nTraining new model: lg")
     main(6, "lg")  # lg
-    print("Running xl")
+    print("\nTraining new model: xl")
     main(8, "xl")  # xl
