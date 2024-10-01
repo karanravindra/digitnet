@@ -1,4 +1,3 @@
-
 import os
 
 import torch
@@ -86,7 +85,7 @@ def main(width, name):
     model = Model(ModelConfig(width=width))
     model.to(device)
     summary(model, (1, 1, 32, 32), depth=1, device=device)
-    
+
     # Define the optimizer and the loss function
     optimizer = torch.optim.AdamW(model.parameters(), lr=8e-4)
     criterion = torch.nn.CrossEntropyLoss(
@@ -104,7 +103,7 @@ def main(width, name):
             x, y = x.to(device), y.to(device)
             optimizer.zero_grad()
             y_pred = model(x)
-            y_pred = y_pred['logits']
+            y_pred = y_pred["logits"]
             loss = criterion(y_pred, y)
             loss.backward()
             optimizer.step()
@@ -125,7 +124,7 @@ def main(width, name):
             for x, y in val_loader:
                 x, y = x.to(device), y.to(device)
                 y_pred = model(x)
-                y_pred = y_pred['logits']
+                y_pred = y_pred["logits"]
                 val_loss += criterion(y_pred, y).item()
                 val_acc += (y_pred.argmax(1) == y).float().mean().item()
         val_loss /= len(val_loader)
@@ -140,7 +139,7 @@ def main(width, name):
         for x, y in test_loader:
             x, y = x.to(device), y.to(device)
             y_pred = model(x)
-            y_pred = y_pred['logits']
+            y_pred = y_pred["logits"]
             test_loss += criterion(y_pred, y).item()
             test_acc += (y_pred.argmax(1) == y).float().mean().item()
             test_outputs.append(y_pred)

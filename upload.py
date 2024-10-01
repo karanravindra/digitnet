@@ -10,5 +10,5 @@ for w, folder in zip(widths, os.listdir("checkpoints")):
 
     model = ModelForImageClassification(ModelConfig(width=w))
     load_model(model, f"checkpoints/{folder}/model.safetensors")
-    
+
     model.push_to_hub(repo_id=f"karanravindra/digitnet-{folder}", use_temp_dir=True)
