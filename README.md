@@ -25,7 +25,7 @@ The architecture of DigitNet is inspired by:
 - [ConvNeXt](https://arxiv.org/pdf/2201.03545)
 - [ConvNet-v2](https://arxiv.org/pdf/2301.00808) (specifically, the Global Response Normalization (GRN) block)
 
-The model, however, is **not** trained with the Fully Convolutional Masked Autoencoder (FCMAE).
+The model, however, is **not** trained with the Fully Convolutional Masked Autoencoder (FCMAE) objective.
 
 ### Key Model Features:
 
