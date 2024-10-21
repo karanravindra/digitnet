@@ -112,8 +112,11 @@ if __name__ == "__main__":
     from torchvision.utils import make_grid
 
     for i, (x, y) in enumerate(dm.train_dataloader()):
-        print(x.shape, y.shape)
-        plt.imshow(make_grid(x, nrow=16).permute(1, 2, 0))
+        plt.figure(figsize=(8, 6))
+        plt.imshow(make_grid(x, nrow=16).permute(1, 2, 0), interpolation="nearest")
+        plt.title("MNIST Examples", fontdict={"fontsize": 16})
+        plt.axis("off")
         plt.show()
-        if i > 0:
+
+        if i == 0:
             break
