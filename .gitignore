@@ -1,0 +1,11 @@
+# general python
+.venv
+__pycache__
+*.pyc
+
+# project
+data
+logs
+
+# macOS
+.DS_Store
