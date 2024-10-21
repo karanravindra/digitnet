@@ -100,7 +100,7 @@ class Model(LightningModule):
         self,
         in_channels: int,
         width: int,
-        labels: dict[str, int],
+        labels: dict[str, int] | None = None,
         num_classes: int = 10,
         layers_per_block: tuple[int, int, int, int] = (2, 2, 6, 2),
         mult_per_layer: tuple[int, int, int, int] = (1, 2, 4, 8),
@@ -133,6 +133,10 @@ class Model(LightningModule):
         )
 
         self.save_hyperparameters(ignore=["labels"])
+
+        if labels is None:
+            labels = {str(i): i for i in range(num_classes)}
+
         self.labels = labels
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
